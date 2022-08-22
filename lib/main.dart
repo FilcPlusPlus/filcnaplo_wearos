@@ -1,5 +1,3 @@
-import 'package:filc_wear/pages/ambient/ambient_screen.dart';
-import 'package:filc_wear/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:wear/wear.dart';
 
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Filc for Wear',
+      title: 'Filc++',
       debugShowCheckedModeBanner: false,
       home: WatchScreen(),
     );
@@ -29,9 +27,8 @@ class WatchScreen extends StatelessWidget {
   Widget build(BuildContext context) => WatchShape(
         builder: (BuildContext context, WearShape shape, Widget? child) =>
             AmbientMode(
-          builder: (context, mode, child) => mode == WearMode.active
-              ? const HomePage()
-              : const AmbientScreen(),
+          builder: (context, mode, child) =>
+              mode == WearMode.active ? Container() : Container(),
         ),
       );
 }
